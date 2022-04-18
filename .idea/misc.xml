@@ -4,10 +4,16 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/bg_biru_show.xml" value="0.2055" />
+        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/bg_search.xml" value="0.2055" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/bg_show.xml" value="0.2055" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/gd_bawah_hitam.xml" value="0.2055" />
+        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/poster_star.xml" value="0.2055" />
+        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/round.xml" value="0.2055" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_welcome.xml" value="0.16" />
+        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_home_screen.xml" value="0.33" />
+        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_welcome.xml" value="0.25" />
+        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/highlight_rv.xml" value="0.5" />
+        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/populer_rv.xml" value="0.33" />
       </map>
     </option>
   </component>
@@ -20,7 +26,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.16" />
+        <option name="scale" value="0.5" />
       </ProjectState>
     </option>
   </component>
