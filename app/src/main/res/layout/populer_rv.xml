@@ -2,11 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginHorizontal="12dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
+        android:background="@color/white"
         android:id="@+id/cv_poster"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="226dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,56 +21,59 @@
 
             <ImageView
                 android:id="@+id/iv_poster"
-                android:src="@drawable/poster_blank_rev"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:scaleType="centerCrop"
+                android:layout_width="154dp"
+                android:layout_height="229dp"
+                android:src="@drawable/poster_blank_rev" />
 
             <ImageView
                 android:id="@+id/iv_container_rating"
                 android:layout_width="50dp"
                 android:layout_height="22dp"
-                android:background="@drawable/poster_star"
                 android:layout_margin="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                android:background="@drawable/poster_star"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
                 android:id="@+id/tv_rating"
-                android:text="100%"
-                android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="100%"
+                android:textColor="@color/white"
                 android:textSize="10sp"
-                app:layout_constraintStart_toEndOf="@id/iv_star"
+                app:layout_constraintBottom_toBottomOf="@id/iv_container_rating"
                 app:layout_constraintEnd_toEndOf="@id/iv_container_rating"
-                app:layout_constraintTop_toTopOf="@id/iv_container_rating"
-                app:layout_constraintBottom_toBottomOf="@id/iv_container_rating"/>
+                app:layout_constraintStart_toEndOf="@id/iv_star"
+                app:layout_constraintTop_toTopOf="@id/iv_container_rating" />
 
             <ImageView
                 android:id="@+id/iv_star"
-                android:src="@drawable/ic_star"
                 android:layout_width="14dp"
                 android:layout_height="14dp"
-                app:layout_constraintStart_toStartOf="@id/iv_container_rating"
-                app:layout_constraintTop_toTopOf="@id/iv_container_rating"
+                android:src="@drawable/ic_star"
+                app:layout_constraintBottom_toBottomOf="@id/iv_container_rating"
                 app:layout_constraintEnd_toStartOf="@id/tv_rating"
-                app:layout_constraintBottom_toBottomOf="@id/iv_container_rating"/>
+                app:layout_constraintStart_toStartOf="@id/iv_container_rating"
+                app:layout_constraintTop_toTopOf="@id/iv_container_rating" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
+
     <TextView
         android:id="@+id/tv_judul"
-        android:text="Judul Film"
-        android:fontFamily="@font/montserrat_bold"
-        android:textSize="16dp"
-        android:textColor="@color/white"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
+        android:layout_marginEnd="14dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Judul Film"
+        android:textColor="@color/white"
+        android:textSize="16dp"
         app:layout_constraintStart_toStartOf="@id/cv_poster"
-        app:layout_constraintTop_toBottomOf="@id/cv_poster"/>
+        app:layout_constraintTop_toBottomOf="@id/cv_poster" />
 
     <TextView
         android:id="@+id/tv_release"

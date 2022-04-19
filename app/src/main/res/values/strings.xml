@@ -2,4 +2,5 @@
     <string name="app_name">MoovieApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_overview">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et vestibulum nibh. Ut rhoncus libero non venenatis commodo. Pellentesque tempor nulla felis, non rutrum est congue a. Fusce quis nunc eget arcu rhoncus consequat. In facilisis velit non diam scelerisque scelerisque. Aliquam porttitor metus at justo vestibulum, eget elementum est tincidunt. Mauris scelerisque justo eu sodales porttitor. Nam sollicitudin magna ut aliquam gravida.</string>
 </resources>
