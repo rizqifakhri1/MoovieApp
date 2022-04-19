@@ -6,11 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.rizqi.myapplication.databinding.FragmentWelcomeBinding
+import com.rizqi.myapplication.databinding.FragmentLoginBinding
+import com.rizqi.myapplication.databinding.FragmentRegisterBinding
 
-class WelcomeFragment : Fragment() {
+class RegisterFragment : Fragment() {
 
-    private var _binding : FragmentWelcomeBinding? = null
+    private var _binding : FragmentRegisterBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,14 +19,15 @@ class WelcomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentWelcomeBinding.inflate(inflater, container, false)
+        _binding = FragmentRegisterBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.ivMulai.setOnClickListener {
-            findNavController().navigate(R.id.action_welcomeFragment_to_loginFragment)
+
+        binding.tvLogin.setOnClickListener{
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
         }
     }
 }

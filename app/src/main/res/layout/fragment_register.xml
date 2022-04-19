@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/near_black"
-    tools:context=".LoginFragment">
+    tools:context=".RegisterFragment">
 
     <ImageView
         android:id="@+id/iv_gradasi_orange"
@@ -64,7 +64,7 @@
 
         <TextView
             android:id="@+id/tv_header_register"
-            android:text="Login"
+            android:text="Register"
             android:textSize="40sp"
             android:layout_marginTop="25dp"
             android:fontFamily="@font/montserrat_bold"
@@ -78,66 +78,118 @@
 
         <!--TextInput UserName -->
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/ti_user_name_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="14dp"
-            android:hint="username"
+            android:layout_marginTop="14dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
             app:errorEnabled="true"
-            app:startIconDrawable="@drawable/ic_baseline_person_24"
-            app:layout_constraintStart_toStartOf="parent"
+            android:hint="Masukan Username"
+            app:layout_constraintBottom_toTopOf="@id/ti_user_email_layout"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_header_register"
+            app:startIconDrawable="@drawable/ic_baseline_person_24"
             tools:layout_editor_absoluteY="212dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ti_user_name_edit_Text"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--TextInput Email -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_user_email_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            android:hint="Masukan Email"
+            app:errorEnabled="true"
+            app:layout_constraintBottom_toTopOf="@id/ti_user_password_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ti_user_name_layout"
+            app:startIconDrawable="@drawable/ic_email"
+            tools:layout_editor_absoluteY="212dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ti_user_email_edit_Text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <!--TextInput Password -->
         <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:id="@+id/ti_user_password_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
             android:layout_marginEnd="14dp"
-            android:hint="Password"
+            android:hint="Masukan Password"
             app:errorEnabled="true"
             app:endIconMode="password_toggle"
-            app:startIconDrawable="@drawable/ic_baseline_lock_24"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/ti_user_password_confirm_layout"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ti_user_name_layout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ti_user_email_layout"
+            app:startIconDrawable="@drawable/ic_baseline_lock_24"
             tools:layout_editor_absoluteY="212dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ti_user_password_edit_Text"
-                android:inputType="textPassword"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:inputType="textPassword"
+                android:layout_height="match_parent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!--TextInput Password -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ti_user_password_confirm_layout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            app:errorEnabled="true"
+            app:endIconMode="password_toggle"
+            android:hint="Masukan Kembali Password"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ti_user_password_layout"
+            app:startIconDrawable="@drawable/ic_baseline_lock_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ti_user_password_confirm_edit_Text"
+                android:layout_width="match_parent"
+                android:inputType="textPassword"
+                android:layout_height="match_parent" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <ImageButton
-            android:id="@+id/btn_login"
+            android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
             android:layout_marginEnd="14dp"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/btn_login_rev"
+            android:background="@drawable/btn_register_rev"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/tv_register"/>
+            app:layout_constraintBottom_toTopOf="@id/tv_login"/>
 
         <TextView
-            android:id="@+id/tv_register"
-            android:text="Belum punya akun"
+            android:id="@+id/tv_login"
+            android:text="Sudah punya akun? klik disini"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="14dp"
@@ -146,6 +198,4 @@
             app:layout_constraintBottom_toBottomOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
