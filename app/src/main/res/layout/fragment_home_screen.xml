@@ -74,8 +74,6 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_menyapa_nama"
                 app:layout_constraintBottom_toBottomOf="@id/ic_profil"/>
 
-
-
             <ImageButton
                 android:id="@+id/ib_menu"
                 android:layout_width="35dp"
