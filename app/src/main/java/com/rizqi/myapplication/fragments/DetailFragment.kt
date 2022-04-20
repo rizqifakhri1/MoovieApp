@@ -1,11 +1,12 @@
 
-package com.rizqi.myapplication
+package com.rizqi.myapplication.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.rizqi.myapplication.R
 import com.rizqi.myapplication.databinding.FragmentHomeScreenBinding
 
 class DetailFragment : Fragment() {
