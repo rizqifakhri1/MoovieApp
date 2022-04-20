@@ -38,6 +38,7 @@ class LoginFragment : Fragment() {
     companion object {
         const val LOGINUSER = "login_username"
         const val USERNAME = "username"
+        const val PASSWORD = "password"
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -77,6 +78,7 @@ class LoginFragment : Fragment() {
                         if (result == true) {
                             val editor : SharedPreferences.Editor = preferences.edit()
                             editor.putString(USERNAME, binding.tiUserNameEditText.text.toString())
+                            editor.putString(PASSWORD, binding.tiUserPasswordEditText.text.toString())
                             editor.apply()
                             Toast.makeText(context, "Login berhasil", Toast.LENGTH_SHORT).show()
                             findNavController().navigate(R.id.action_loginFragment_to_homeScreenFragment)

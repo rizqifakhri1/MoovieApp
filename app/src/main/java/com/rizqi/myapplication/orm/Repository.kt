@@ -8,4 +8,8 @@ class Repository (private val userDao: UserDao) {
         return userDao.insertUser(userEntity)
     }
 
+    fun update(userEntity: UserEntity) : Int {
+        return userDao.updateUser(userEntity)
+    }
+
 }
