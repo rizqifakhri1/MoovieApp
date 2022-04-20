@@ -103,6 +103,7 @@
                 android:text="Sedang Populer"
                 android:textColor="@color/white"
                 android:textSize="24dp"
+                android:layout_marginTop="14dp"
                 android:layout_marginStart="16dp"
                 android:fontFamily="@font/montserrat_bold"
                 android:layout_width="wrap_content"
@@ -138,8 +139,8 @@
 
     <ImageView
         android:id="@+id/iv_middle"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:src="@drawable/ic_movie"
         app:layout_constraintBottom_toTopOf="@id/iv_nav"
         app:layout_constraintEnd_toStartOf="@id/iv_profil"

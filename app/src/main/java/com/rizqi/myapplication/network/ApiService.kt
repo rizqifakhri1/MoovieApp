@@ -8,4 +8,5 @@ interface ApiService {
 
     @GET("movie/popular?api_key=b4c17e0cc787b3a9f80b08cf1300bd72")
     fun getAllMoviePopuler() : Call<GetAllMoviePopular>
+
 }
