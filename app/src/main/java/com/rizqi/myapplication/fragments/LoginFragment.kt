@@ -46,8 +46,10 @@ class LoginFragment : Fragment() {
 
 
         //Implementasi SharedPreferences
-        val preferences = this.activity?.getSharedPreferences(LOGINUSER, Context.MODE_PRIVATE)
-        if (preferences!!.getString(USERNAME, null) != null ) {
+        val preferences = requireContext().getSharedPreferences(LOGINUSER, Context.MODE_PRIVATE)
+
+        val username = preferences.getString(USERNAME, "default_username")
+        if (username != "default_username") {
             findNavController().navigate(R.id.action_loginFragment_to_homeScreenFragment)
         }
 

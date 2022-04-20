@@ -1,5 +1,7 @@
 package com.rizqi.myapplication.fragments
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,6 +26,7 @@ class HomeScreenFragment : Fragment() {
 
     private var _binding : FragmentHomeScreenBinding? = null
     private val binding get() = _binding!!
+    private lateinit var preferences: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,6 +39,12 @@ class HomeScreenFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        //Implementasi Save Preferences
+        preferences = requireContext().getSharedPreferences(LoginFragment.LOGINUSER, Context.MODE_PRIVATE)
+        //Untuk menyapa user Assalamualaikum ${username}
+        binding.tvMenyapaNama.text = "${preferences.getString(LoginFragment.USERNAME,null)}"
+
         binding.tvDesc.setOnClickListener{
             findNavController().navigate(R.id.action_homeScreenFragment_to_detailFragment)
         }
