@@ -9,9 +9,12 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.rizqi.myapplication.R
 import com.rizqi.myapplication.adapter.PopularAdapter
+import com.rizqi.myapplication.adapter.UpcomingAdapter
 import com.rizqi.myapplication.databinding.FragmentHomeScreenBinding
 import com.rizqi.myapplication.model.GetAllMoviePopular
+import com.rizqi.myapplication.model.GetAllMovieUpcoming
 import com.rizqi.myapplication.model.ResultAdapter
+import com.rizqi.myapplication.model.ResultUpcoming
 import com.rizqi.myapplication.network.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
@@ -36,7 +39,13 @@ class HomeScreenFragment : Fragment() {
         binding.tvDesc.setOnClickListener{
             findNavController().navigate(R.id.action_homeScreenFragment_to_detailFragment)
         }
+
+        binding.ivProfil.setOnClickListener {
+            findNavController().navigate(R.id.action_homeScreenFragment_to_profileFragment2)
+        }
+
         fetchAllMoviePopular()
+        fetchAllMovieUpcoming()
     }
 
     private fun fetchAllMoviePopular(){
@@ -56,7 +65,6 @@ class HomeScreenFragment : Fragment() {
                     }
 
                 }
-
                 override fun onFailure(call: Call<GetAllMoviePopular>, t: Throwable) {
                     Toast.makeText(requireContext(), "${t.message}", Toast.LENGTH_SHORT).show()
                 }
@@ -71,6 +79,41 @@ class HomeScreenFragment : Fragment() {
         })
         adapter.submitData(data)
         binding.rvHighlight.adapter = adapter
+    }
+
+
+    private fun fetchAllMovieUpcoming(){
+        ApiClient.instance.getAllMovieUpcoming()
+            .enqueue(object : Callback<GetAllMovieUpcoming> {
+
+                override fun onResponse(
+                    call: Call<GetAllMovieUpcoming>,
+                    response: Response<GetAllMovieUpcoming>
+                ) {
+                    val body = response.body()
+                    val code = response.code()
+                    if (code == 200){
+                        body?.let { showListMovieUpcoming(it.results)
+                        }
+
+                    }
+
+                }
+
+                override fun onFailure(call: Call<GetAllMovieUpcoming>, t: Throwable) {
+                    Toast.makeText(requireContext(), "${t.message}", Toast.LENGTH_SHORT).show()
+                }
+            })
+    }
+
+    private fun showListMovieUpcoming(data: List<ResultUpcoming>) {
+        val adapter = UpcomingAdapter(object : UpcomingAdapter.OnClickListener{
+            override fun onClickItem(data: ResultUpcoming) {
+                val id = data.id
+            }
+        })
+        adapter.submitData(data)
+        binding.rvPopuler.adapter = adapter
     }
 
 }
