@@ -48,6 +48,10 @@ class PopularAdapter(private val onItemClick: OnClickListener):
             binding.apply {
                 Glide.with(binding.root).load(IMAGE_BASE+data.posterPath).into(ivPoster)
                 tvJudul.text = data.originalTitle
+                tvScore.text = data.voteAverage.toString()
+                tvRelease.text = data.releaseDate
+                tvPopular.text = data.popularity.toString()
+                tvBahasa.text = data.originalLanguage.toUpperCase()
                 root.setOnClickListener{
                     onItemClick.onClickItem(data)
                 }

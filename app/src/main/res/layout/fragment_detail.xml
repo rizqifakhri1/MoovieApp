@@ -103,7 +103,7 @@
                     app:layout_constraintTop_toTopOf="@id/tv_release" />
 
                 <ImageView
-                    android:id="@+id/iv_clock"
+                    android:id="@+id/iv_chart"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="14dp"
@@ -113,15 +113,15 @@
                     app:layout_constraintTop_toTopOf="@id/iv_line_satu" />
 
                 <TextView
-                    android:id="@+id/tv_duration"
+                    android:id="@+id/tv_popular"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
                     android:text="148 Minutes"
                     android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="@id/iv_clock"
-                    app:layout_constraintStart_toEndOf="@id/iv_clock"
-                    app:layout_constraintTop_toTopOf="@id/iv_clock" />
+                    app:layout_constraintBottom_toBottomOf="@id/iv_chart"
+                    app:layout_constraintStart_toEndOf="@id/iv_chart"
+                    app:layout_constraintTop_toTopOf="@id/iv_chart" />
 
                 <ImageView
                     android:id="@+id/iv_line_dua"
@@ -129,9 +129,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="14dp"
                     android:src="@drawable/line"
-                    app:layout_constraintBottom_toBottomOf="@id/tv_duration"
-                    app:layout_constraintStart_toEndOf="@id/tv_duration"
-                    app:layout_constraintTop_toTopOf="@id/tv_duration" />
+                    app:layout_constraintBottom_toBottomOf="@id/tv_popular"
+                    app:layout_constraintStart_toEndOf="@id/tv_popular"
+                    app:layout_constraintTop_toTopOf="@id/tv_popular" />
 
                 <ImageView
                     android:id="@+id/iv_genre"
@@ -144,7 +144,7 @@
                     app:layout_constraintTop_toTopOf="@id/iv_line_dua" />
 
                 <TextView
-                    android:id="@+id/tv_genre"
+                    android:id="@+id/tv_bahasa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="6dp"
