@@ -66,6 +66,7 @@ dependencies {
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.13.0'
 
+    //Tranparat statusbar
     implementation 'dev.chrisbanes.insetter:insetter:0.6.1'
 
     testImplementation 'junit:junit:4.13.2'

@@ -58,6 +58,7 @@
                 android:textColor="@color/white"
                 android:fontFamily="@font/montserrat_bold"
                 android:textSize="32dp"
+                android:textAlignment="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
@@ -153,7 +154,6 @@
                     app:layout_constraintBottom_toBottomOf="@id/iv_genre"
                     app:layout_constraintStart_toEndOf="@id/iv_genre"
                     app:layout_constraintTop_toTopOf="@id/iv_genre" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView

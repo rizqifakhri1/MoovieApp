@@ -75,6 +75,8 @@ class HomeScreenFragment : Fragment() {
         val adapter = PopularAdapter(object : PopularAdapter.OnClickListener{
             override fun onClickItem(data: ResultAdapter) {
                 val id = data.id
+                val toDetail = HomeScreenFragmentDirections.actionHomeScreenFragmentToDetailFragment(id)
+                findNavController().navigate(toDetail)
             }
         })
         adapter.submitData(data)
@@ -110,6 +112,9 @@ class HomeScreenFragment : Fragment() {
         val adapter = UpcomingAdapter(object : UpcomingAdapter.OnClickListener{
             override fun onClickItem(data: ResultUpcoming) {
                 val id = data.id
+                val toDetail = HomeScreenFragmentDirections.actionHomeScreenFragmentToDetailFragment(id)
+                findNavController().navigate(toDetail)
+
             }
         })
         adapter.submitData(data)
