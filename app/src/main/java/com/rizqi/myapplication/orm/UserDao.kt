@@ -16,5 +16,5 @@ interface UserDao {
     fun insertUser (userEntity: UserEntity):Long
 
     @Update
-    fun updateUser (ramadhanEntity: UserEntity):Int
+    fun updateUser (userEntity: UserEntity):Int
 }

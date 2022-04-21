@@ -49,6 +49,11 @@ class DetailFragment : Fragment() {
         detailViewModel.dataDetail.observe(viewLifecycleOwner){
             Glide.with(binding.root).load(IMAGE_BASE+it.posterPath).into(binding.ivPoster)
             binding.tvJudul.text = it.originalTitle
+            binding.tvTextOverview.text = it.overview
+            binding.tvBahasa.text = it.originalLanguage
+            binding.tvRelease.text = it.releaseDate
+            binding.tvScore.text = it.voteAverage.toString()
+            binding.tvPopular.text = it.popularity.toString()
         }
 
     }

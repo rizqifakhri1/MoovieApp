@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -56,17 +57,55 @@ class ProfileFragment : Fragment() {
         if (username != null && password != null) {
                 getData(username, password)
         }
-
-        binding.btnUpdate.setOnClickListener {
-
-        }
-
+        var id = 0
         profileViewModel.userData.observe(viewLifecycleOwner){
+            id = it.id!!
             binding.tiUserNameEditText.setText(it.username)
             binding.tiUserEmailEditText.setText(it.email)
             binding.tiUserPasswordEditText.setText(it.password)
         }
+        binding.btnUpdate.setOnClickListener {
+            when {
+                binding.tiUserNameEditText.text.isNullOrEmpty() -> {
+                    binding.tiUserNameLayout.error = "Username belum diisi"
+                }
+                binding.tiUserPasswordEditText.text.isNullOrEmpty() -> {
+                    binding.tiUserPasswordLayout.error = "Password belum diisi"
+                }
+                binding.tiUserEmailEditText.text.isNullOrEmpty() -> {
+                    binding.tiUserPasswordLayout.error = "Email belum diisi"
+                } else -> {
+                val data = UserEntity(
+                    id,
+                    binding.tiUserNameEditText.text.toString(),
+                    binding.tiUserEmailEditText.text.toString(),
+                    binding.tiUserPasswordEditText.text.toString()
+                )
+                lifecycleScope.launch(Dispatchers.IO){
+                    val result = database?.userDao()?.updateUser(data)
+                    runBlocking(Dispatchers.Main) {
+                        if (result != 0){
+                            val editor = sharedPreferences.edit()
+                            editor.putString(USERNAME, data.username)
+                            editor.apply()
+                            Toast.makeText(requireContext(), "Data Berhasil Disimpan ${id}", Toast.LENGTH_SHORT).show()
+                            findNavController().navigate(R.id.action_profileFragment_to_homeScreenFragment)
+                        } else {
+                            Toast.makeText(requireContext(), """
+                                    ${id},
+                        ${binding.tiUserNameEditText.text},
+                        ${binding.tiUserEmailEditText.text},
+                        ${binding.tiUserPasswordEditText.text}
+                                """.trimIndent(), Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+            }
+            }
+        }
+
         userLogout()
+
     }
 
     private fun getData(username: String, password: String) {
