@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.rizqi.myapplication.R
@@ -56,5 +57,8 @@ class DetailFragment : Fragment() {
             binding.tvPopular.text = it.popularity.toString()
         }
 
+        binding.ivBackbutton.setOnClickListener {
+            findNavController().navigate(R.id.action_detailFragment_to_homeScreenFragment)
+        }
     }
 }

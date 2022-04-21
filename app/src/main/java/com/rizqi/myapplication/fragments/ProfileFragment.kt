@@ -49,6 +49,10 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
         super.onViewCreated(view, savedInstanceState)
+
+        binding.ivHome.setOnClickListener {
+            findNavController().navigate(R.id.action_profileFragment_to_homeScreenFragment)
+        }
         database = UserDatabase.getInstance(requireContext())
         sharedPreferences = requireContext().getSharedPreferences(LOGINUSER, Context.MODE_PRIVATE)
         profileViewModel = ViewModelProvider(requireActivity()).get(ProfileViewModel::class.java)
