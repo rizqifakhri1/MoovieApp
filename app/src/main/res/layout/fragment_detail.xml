@@ -15,13 +15,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-   <!--         <ImageView
+<!--            <ImageView
                 android:id="@+id/iv_gradasi_biru"
                 android:layout_width="390dp"
                 android:layout_height="393dp"
                 android:src="@drawable/gd_biru_bawah"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent" />-->
+
 
             <ImageView
                 android:id="@+id/iv_poster"
@@ -35,20 +36,20 @@
 
             <ImageView
                 android:id="@+id/iv_gradasi"
-                android:src="@drawable/gradasi_bawah_detail_rev"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="350dp"
                 android:scaleType="fitXY"
-                app:layout_constraintStart_toStartOf="parent"
+                android:src="@drawable/gradasi_bawah_detail_rev"
+                app:layout_constraintBottom_toBottomOf="@id/iv_poster"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@id/iv_poster"/>
+                app:layout_constraintStart_toStartOf="parent" />
 
             <androidx.constraintlayout.widget.Guideline
                 android:id="@+id/guideline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                app:layout_constraintGuide_percent="0.49" />
+                app:layout_constraintGuide_percent="0.48" />
 
 
 
@@ -58,6 +59,7 @@
                 android:textColor="@color/white"
                 android:fontFamily="@font/montserrat_bold"
                 android:textSize="32dp"
+                android:layout_marginTop="32dp"
                 android:textAlignment="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -239,6 +241,7 @@
         android:layout_height="301dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />-->
+
 
 
     <ImageView
