@@ -53,6 +53,11 @@ class ProfileFragment : Fragment() {
         binding.ivHome.setOnClickListener {
             findNavController().navigate(R.id.action_profileFragment_to_homeScreenFragment)
         }
+
+        binding.ivMiddle.setOnClickListener {
+            findNavController().navigate(R.id.action_profileFragment_to_movieFragment)
+        }
+
         database = UserDatabase.getInstance(requireContext())
         sharedPreferences = requireContext().getSharedPreferences(LOGINUSER, Context.MODE_PRIVATE)
         profileViewModel = ViewModelProvider(requireActivity()).get(ProfileViewModel::class.java)

@@ -52,6 +52,9 @@ class HomeScreenFragment : Fragment() {
         binding.ivProfil.setOnClickListener {
             findNavController().navigate(R.id.action_homeScreenFragment_to_profileFragment2)
         }
+        binding.ivMiddle.setOnClickListener {
+            findNavController().navigate(R.id.action_homeScreenFragment_to_movieFragment)
+        }
 
         fetchAllMoviePopular()
         fetchAllMovieUpcoming()
