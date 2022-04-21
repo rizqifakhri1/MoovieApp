@@ -43,7 +43,7 @@ class HomeScreenFragment : Fragment() {
         //Implementasi Save Preferences
         preferences = requireContext().getSharedPreferences(LoginFragment.LOGINUSER, Context.MODE_PRIVATE)
         //Untuk menyapa user Assalamualaikum ${username}
-        binding.tvMenyapaNama.text = "${preferences.getString(LoginFragment.USERNAME,null)}"
+        binding.tvMenyapaNama.text = "Halo ${preferences.getString(LoginFragment.USERNAME,null)}"
 
         binding.tvDesc.setOnClickListener{
             findNavController().navigate(R.id.action_homeScreenFragment_to_detailFragment)
