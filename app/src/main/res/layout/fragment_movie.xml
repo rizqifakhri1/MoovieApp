@@ -7,17 +7,40 @@
     android:background="@color/near_black"
     tools:context=".MovieFragment">
 
+    <ImageView
+        android:id="@+id/iv_gradasi_orange"
+        android:layout_width="373dp"
+        android:layout_height="332dp"
+        android:layout_marginEnd="-10dp"
+        android:src="@drawable/gd_biru_atas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <TextView
-        android:text="Coming Soon"
+        android:id="@+id/tv_wishlist"
+        android:text="Movie Wishlist"
         android:textColor="@color/white"
-        android:fontFamily="@font/montserrat_bold"
+        android:fontFamily="@font/poppins_bold"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="14dp"
+        android:textSize="24sp"
         android:layout_width="wrap_content"
-        android:textSize="32dp"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        />
+
+    <TextView
+        android:id="@+id/tv_desc_wishlist"
+        android:text="Koleksi film yang kamu tambahkan ke wishlist"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_wishlist"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
