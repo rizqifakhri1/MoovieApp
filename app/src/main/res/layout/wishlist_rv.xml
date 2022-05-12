@@ -75,6 +75,7 @@
         android:textColor="@color/white"
         android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toEndOf="@id/section_poster"
         app:layout_constraintTop_toTopOf="@id/section_poster" />
 

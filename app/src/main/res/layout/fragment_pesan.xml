@@ -1,14 +1,602 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/near_black"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PesanFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="pesan" />
+    <ImageView
+        android:id="@+id/iv_gradasi_biru"
+        android:layout_width="373dp"
+        android:layout_height="332dp"
+        android:layout_marginEnd="-10dp"
+        android:src="@drawable/gd_biru_atas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+
+    <ImageView
+        android:id="@+id/iv_gradasi_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/bg_moovie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_poster"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="14dp"
+        android:src="@drawable/poster_blank_dua"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_judul"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="14dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Judul Film"
+        android:textColor="@color/white"
+        android:textSize="31dp"
+        app:layout_constraintStart_toEndOf="@id/iv_poster"
+        app:layout_constraintTop_toTopOf="@id/iv_poster"/>
+
+    <TextView
+        android:id="@+id/tv_desc"
+        android:layout_width="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="14dp"
+        android:layout_height="wrap_content"
+        android:justificationMode="inter_word"
+        android:text="Deskripsi overview dari pada film yang dipili oleh user ini contoh saja. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tv_judul"
+        app:layout_constraintTop_toBottomOf="@id/tv_judul" />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/pilihan"
+        app:layout_constraintStart_toStartOf="@id/tv_desc"
+        app:layout_constraintTop_toBottomOf="@id/tv_desc"
+        app:layout_constraintEnd_toEndOf="@id/tv_desc"/>
+
+
+
+    <!--Baris Pertama-->
+
+    <CheckBox
+        android:id="@+id/cb_1"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:layout_marginTop="48dp"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_poster"
+        app:layout_constraintEnd_toStartOf="@id/cb_2"/>
+
+    <CheckBox
+        android:id="@+id/cb_2"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_1"
+        app:layout_constraintTop_toTopOf="@id/cb_1"
+        app:layout_constraintEnd_toStartOf="@id/cb_3"/>
+
+    <CheckBox
+        android:id="@+id/cb_3"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_2"
+        app:layout_constraintTop_toTopOf="@id/cb_2"
+        app:layout_constraintEnd_toStartOf="@id/cb_4"/>
+
+    <CheckBox
+        android:id="@+id/cb_4"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_3"
+        app:layout_constraintTop_toTopOf="@id/cb_3"
+        app:layout_constraintEnd_toStartOf="@id/cb_5"/>
+
+    <CheckBox
+        android:id="@+id/cb_5"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_4"
+        app:layout_constraintTop_toTopOf="@id/cb_4"
+        app:layout_constraintEnd_toStartOf="@id/cb_6"/>
+
+    <CheckBox
+        android:id="@+id/cb_6"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_5"
+        app:layout_constraintTop_toTopOf="@id/cb_5"
+        app:layout_constraintEnd_toStartOf="@id/cb_7"/>
+
+    <CheckBox
+        android:id="@+id/cb_7"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_6"
+        app:layout_constraintTop_toTopOf="@id/cb_6"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!--Baris Kedua-->
+
+    <CheckBox
+        android:id="@+id/cb_1dua"
+        android:layout_marginTop="14dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cb_1"
+        app:layout_constraintEnd_toStartOf="@id/cb_2dua"/>
+
+    <CheckBox
+        android:id="@+id/cb_2dua"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_1dua"
+        app:layout_constraintTop_toTopOf="@id/cb_1dua"
+        app:layout_constraintEnd_toStartOf="@id/cb_3dua"/>
+
+    <CheckBox
+        android:id="@+id/cb_3dua"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_2dua"
+        app:layout_constraintTop_toTopOf="@id/cb_2dua"
+        app:layout_constraintEnd_toStartOf="@id/cb_4dua"/>
+
+    <CheckBox
+        android:id="@+id/cb_4dua"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_3dua"
+        app:layout_constraintTop_toTopOf="@id/cb_3dua"
+        app:layout_constraintEnd_toStartOf="@id/cb_5dua"/>
+
+    <CheckBox
+        android:id="@+id/cb_5dua"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_4dua"
+        app:layout_constraintTop_toTopOf="@id/cb_4dua"
+        app:layout_constraintEnd_toStartOf="@id/cb_6dua"/>
+
+    <CheckBox
+        android:id="@+id/cb_6dua"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_5dua"
+        app:layout_constraintTop_toTopOf="@id/cb_5dua"
+        app:layout_constraintEnd_toStartOf="@id/cb_7dua"/>
+
+    <CheckBox
+        android:id="@+id/cb_7dua"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_6dua"
+        app:layout_constraintTop_toTopOf="@id/cb_6dua"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!--Baris Tiga-->
+
+    <CheckBox
+        android:id="@+id/cb_1tiga"
+        android:layout_marginTop="14dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cb_1dua"
+        app:layout_constraintEnd_toStartOf="@id/cb_2"/>
+
+    <CheckBox
+        android:id="@+id/cb_2tiga"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_1tiga"
+        app:layout_constraintTop_toTopOf="@id/cb_1tiga"
+        app:layout_constraintEnd_toStartOf="@id/cb_3tiga"/>
+
+    <CheckBox
+        android:id="@+id/cb_3tiga"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_2tiga"
+        app:layout_constraintTop_toTopOf="@id/cb_2tiga"
+        app:layout_constraintEnd_toStartOf="@id/cb_4tiga"/>
+
+    <CheckBox
+        android:id="@+id/cb_4tiga"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_3tiga"
+        app:layout_constraintTop_toTopOf="@id/cb_3tiga"
+        app:layout_constraintEnd_toStartOf="@id/cb_5tiga"/>
+
+    <CheckBox
+        android:id="@+id/cb_5tiga"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_4tiga"
+        app:layout_constraintTop_toTopOf="@id/cb_4tiga"
+        app:layout_constraintEnd_toStartOf="@id/cb_6tiga"/>
+
+    <CheckBox
+        android:id="@+id/cb_6tiga"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_5tiga"
+        app:layout_constraintTop_toTopOf="@id/cb_5tiga"
+        app:layout_constraintEnd_toStartOf="@id/cb_7tiga"/>
+
+    <CheckBox
+        android:id="@+id/cb_7tiga"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_6tiga"
+        app:layout_constraintTop_toTopOf="@id/cb_6tiga"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <!--Baris Empat-->
+
+    <CheckBox
+        android:id="@+id/cb_1empat"
+        android:layout_marginTop="14dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cb_6tiga"
+        app:layout_constraintEnd_toStartOf="@id/cb_2empat"/>
+
+    <CheckBox
+        android:id="@+id/cb_2empat"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_1empat"
+        app:layout_constraintTop_toTopOf="@id/cb_1empat"
+        app:layout_constraintEnd_toStartOf="@id/cb_3empat"/>
+
+    <CheckBox
+        android:id="@+id/cb_3empat"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_2empat"
+        app:layout_constraintTop_toTopOf="@id/cb_2empat"
+        app:layout_constraintEnd_toStartOf="@id/cb_4empat"/>
+
+    <CheckBox
+        android:id="@+id/cb_4empat"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_3empat"
+        app:layout_constraintTop_toTopOf="@id/cb_3empat"
+        app:layout_constraintEnd_toStartOf="@id/cb_5empat"/>
+
+    <CheckBox
+        android:id="@+id/cb_5empat"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_4empat"
+        app:layout_constraintTop_toTopOf="@id/cb_4empat"
+        app:layout_constraintEnd_toStartOf="@id/cb_6empat"/>
+
+    <CheckBox
+        android:id="@+id/cb_6empat"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_5empat"
+        app:layout_constraintTop_toTopOf="@id/cb_5empat"
+        app:layout_constraintEnd_toStartOf="@id/cb_7empat"/>
+
+    <CheckBox
+        android:id="@+id/cb_7empat"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_6empat"
+        app:layout_constraintTop_toTopOf="@id/cb_6empat"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <!--Baris Lima-->
+
+    <CheckBox
+        android:id="@+id/cb_1lima"
+        android:layout_marginTop="14dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cb_1empat"
+        app:layout_constraintEnd_toStartOf="@id/cb_2lima"/>
+
+    <CheckBox
+        android:id="@+id/cb_2lima"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_1lima"
+        app:layout_constraintTop_toTopOf="@id/cb_1lima"
+        app:layout_constraintEnd_toStartOf="@id/cb_3lima"/>
+
+    <CheckBox
+        android:id="@+id/cb_3lima"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_2lima"
+        app:layout_constraintTop_toTopOf="@id/cb_2lima"
+        app:layout_constraintEnd_toStartOf="@id/cb_4lima"/>
+
+    <CheckBox
+        android:id="@+id/cb_4lima"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_3lima"
+        app:layout_constraintTop_toTopOf="@id/cb_3lima"
+        app:layout_constraintEnd_toStartOf="@id/cb_5lima"/>
+
+    <CheckBox
+        android:id="@+id/cb_5lima"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_4lima"
+        app:layout_constraintTop_toTopOf="@id/cb_4lima"
+        app:layout_constraintEnd_toStartOf="@id/cb_6lima"/>
+
+    <CheckBox
+        android:id="@+id/cb_6lima"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_5lima"
+        app:layout_constraintTop_toTopOf="@id/cb_5lima"
+        app:layout_constraintEnd_toStartOf="@id/cb_7lima"/>
+
+    <CheckBox
+        android:id="@+id/cb_7lima"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_6lima"
+        app:layout_constraintTop_toTopOf="@id/cb_6lima"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!--Baris Enam-->
+
+    <CheckBox
+        android:id="@+id/cb_1enam"
+        android:layout_marginTop="14dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cb_1lima"
+        app:layout_constraintEnd_toStartOf="@id/cb_2enam"/>
+
+    <CheckBox
+        android:id="@+id/cb_2enam"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_1enam"
+        app:layout_constraintTop_toTopOf="@id/cb_1enam"
+        app:layout_constraintEnd_toStartOf="@id/cb_3enam"/>
+
+    <CheckBox
+        android:id="@+id/cb_3enam"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_2enam"
+        app:layout_constraintTop_toTopOf="@id/cb_2enam"
+        app:layout_constraintEnd_toStartOf="@id/cb_4enam"/>
+
+    <CheckBox
+        android:id="@+id/cb_4enam"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_3enam"
+        app:layout_constraintTop_toTopOf="@id/cb_3enam"
+        app:layout_constraintEnd_toStartOf="@id/cb_5enam"/>
+
+    <CheckBox
+        android:id="@+id/cb_5enam"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_4enam"
+        app:layout_constraintTop_toTopOf="@id/cb_4enam"
+        app:layout_constraintEnd_toStartOf="@id/cb_6enam"/>
+
+    <CheckBox
+        android:id="@+id/cb_6enam"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_5enam"
+        app:layout_constraintTop_toTopOf="@id/cb_5enam"
+        app:layout_constraintEnd_toStartOf="@id/cb_7enam"/>
+
+    <CheckBox
+        android:id="@+id/cb_7enam"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:button="@null"
+        android:drawableStart="@drawable/custom_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/cb_6enam"
+        app:layout_constraintTop_toTopOf="@id/cb_6enam"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

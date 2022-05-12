@@ -7,6 +7,7 @@
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/bg_biru_show.xml" value="0.2055" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/bg_search.xml" value="0.2055" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/bg_show.xml" value="0.2055" />
+        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/custom_checkbox.xml" value="0.1935" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/gd_bawah_hitam.xml" value="0.2055" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/gradasi_bawah_detail.xml" value="0.2805" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.2805" />
@@ -16,11 +17,12 @@
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/round.xml" value="0.2055" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/star_black.xml" value="0.235" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/custom_checkbox.xml" value="0.19067977768277042" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_detail.xml" value="0.2" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_home_screen.xml" value="0.22" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_movie.xml" value="0.176" />
-        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_pesan.xml" value="0.19067977768277042" />
+        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_pesan.xml" value="0.4" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_profile.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_qrcode.xml" value="0.19067977768277042" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_register.xml" value="0.25" />
