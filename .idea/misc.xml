@@ -16,12 +16,15 @@
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/round.xml" value="0.2055" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/drawable/star_black.xml" value="0.235" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_detail.xml" value="0.33" />
+        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_detail.xml" value="0.2" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_home_screen.xml" value="0.22" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_login.xml" value="0.25" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_movie.xml" value="0.176" />
+        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_pesan.xml" value="0.19067977768277042" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_profile.xml" value="0.16799999999999998" />
+        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_qrcode.xml" value="0.19067977768277042" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_register.xml" value="0.25" />
+        <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_show_tiket.xml" value="0.19067977768277042" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/fragment_welcome.xml" value="0.2" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/highlight_rv.xml" value="0.33" />
         <entry key="..\:/Users/rizqi/AndroidStudioProjects/MoovieApp/app/src/main/res/layout/populer_rv.xml" value="0.5" />

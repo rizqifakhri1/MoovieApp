@@ -60,5 +60,9 @@ class DetailFragment : Fragment() {
         binding.ivBackbutton.setOnClickListener {
             findNavController().navigate(R.id.action_detailFragment_to_homeScreenFragment)
         }
+
+        binding.ivBtnPesanTiket.setOnClickListener {
+            findNavController().navigate(R.id.action_detailFragment_to_pesanFragment)
+        }
     }
 }

@@ -50,6 +50,9 @@
             android:name="id"
             app:argType="integer"
             android:defaultValue="0" />
+        <action
+            android:id="@+id/action_detailFragment_to_pesanFragment"
+            app:destination="@id/pesanFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -101,6 +104,49 @@
             android:id="@+id/action_movieFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment"
             app:popUpTo="@id/homeScreenFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_movieFragment_to_profileFragment"
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/pesanFragment"
+        android:name="com.rizqi.myapplication.PesanFragment"
+        android:label="fragment_pesan"
+        tools:layout="@layout/fragment_pesan" >
+        <action
+            android:id="@+id/action_pesanFragment_to_showTiketFragment"
+            app:destination="@id/showTiketFragment" />
+        <action
+            android:id="@+id/action_pesanFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:popUpTo="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showTiketFragment"
+        android:name="com.rizqi.myapplication.ShowTiketFragment"
+        android:label="fragment_show_tiket"
+        tools:layout="@layout/fragment_show_tiket" >
+        <action
+            android:id="@+id/action_showTiketFragment_to_qrcodeFragment"
+            app:destination="@id/qrcodeFragment" />
+        <action
+            android:id="@+id/action_showTiketFragment_to_pesanFragment"
+            app:destination="@id/pesanFragment"
+            app:popUpTo="@id/pesanFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/qrcodeFragment"
+        android:name="com.rizqi.myapplication.QrcodeFragment"
+        android:label="fragment_qrcode"
+        tools:layout="@layout/fragment_qrcode" >
+        <action
+            android:id="@+id/action_qrcodeFragment_to_showTiketFragment"
+            app:destination="@id/showTiketFragment"
+            app:popUpTo="@id/showTiketFragment"
             app:popUpToInclusive="true" />
     </fragment>
 </navigation>

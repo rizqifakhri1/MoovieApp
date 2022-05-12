@@ -42,6 +42,7 @@
                 android:src="@drawable/gradasi_bawah_detail_rev"
                 app:layout_constraintBottom_toBottomOf="@id/iv_poster"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <androidx.constraintlayout.widget.Guideline
@@ -159,8 +160,8 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
-                android:id="@+id/iv_btn_trailer"
-                android:src="@drawable/btn_trailer_revdua"
+                android:id="@+id/iv_btn_pesan_tiket"
+                android:src="@drawable/btn_pesan_tiket"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
@@ -174,10 +175,11 @@
                 android:src="@drawable/btn_wishlist_rev"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toEndOf="@id/iv_btn_trailer"
+                android:layout_marginStart="12dp"
+                app:layout_constraintStart_toEndOf="@id/iv_btn_pesan_tiket"
                 app:layout_constraintEnd_toEndOf="@id/container_info"
-                app:layout_constraintTop_toTopOf="@id/iv_btn_trailer"
-                app:layout_constraintBottom_toBottomOf="@id/iv_btn_trailer"/>
+                app:layout_constraintTop_toTopOf="@id/iv_btn_pesan_tiket"
+                app:layout_constraintBottom_toBottomOf="@id/iv_btn_pesan_tiket"/>
 
             <TextView
                 android:id="@+id/tv_header_overview"
@@ -190,7 +192,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/iv_btn_trailer"/>
+                app:layout_constraintTop_toBottomOf="@id/iv_btn_pesan_tiket"/>
 
             <ImageView
                 android:id="@+id/iv_star"
