@@ -79,7 +79,7 @@
         android:minWidth="0dp"
         android:minHeight="0dp"
         android:button="@null"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="64dp"
         android:drawableStart="@drawable/custom_checkbox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -596,7 +596,105 @@
         app:layout_constraintTop_toTopOf="@id/cb_6enam"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <TextView
+        android:id="@+id/iv_layar_bioskop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:textSize="20dp"
+        android:fontFamily="@font/poppins_regular"
+        android:text="Layar Bioskop"
+        android:gravity="center"
+        android:background="@drawable/round"
+        app:layout_constraintStart_toStartOf="@id/cb_1"
+        app:layout_constraintEnd_toEndOf="@id/cb_7"
+        app:layout_constraintTop_toBottomOf="@id/cb_1enam"/>
 
+    <ImageButton
+        android:id="@+id/btn_update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn_pesan_tiket_fix"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/iv_info_avalible"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/cb_false"
+        app:layout_constraintStart_toStartOf="@id/iv_layar_bioskop"
+        app:layout_constraintTop_toBottomOf="@id/iv_layar_bioskop"
+        app:layout_constraintEnd_toStartOf="@id/tv_info_avalible"/>
+
+    <TextView
+        android:id="@+id/tv_info_avalible"
+        android:text="Avalible"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_marginStart="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/iv_info_avalible"
+        app:layout_constraintTop_toTopOf="@id/iv_info_avalible"
+        app:layout_constraintBottom_toBottomOf="@id/iv_info_avalible"/>
+
+    <ImageView
+        android:id="@+id/iv_info_true"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/cb_true"
+        android:layout_marginStart="14dp"
+        app:layout_constraintStart_toEndOf="@id/tv_info_avalible"
+        app:layout_constraintTop_toBottomOf="@id/iv_layar_bioskop"
+        app:layout_constraintEnd_toStartOf="@id/tv_info_true"/>
+
+    <TextView
+        android:id="@+id/tv_info_true"
+        android:text="Selected"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_marginStart="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/iv_info_true"
+        app:layout_constraintTop_toTopOf="@id/iv_info_true"
+        app:layout_constraintBottom_toBottomOf="@id/iv_info_true"
+        app:layout_constraintEnd_toStartOf="@id/iv_info_reserved"/>
+
+
+    <ImageView
+        android:id="@+id/iv_info_reserved"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/ic_booked"
+        android:layout_marginStart="14dp"
+        app:layout_constraintStart_toEndOf="@id/tv_info_true"
+        app:layout_constraintTop_toBottomOf="@id/iv_layar_bioskop"
+        app:layout_constraintEnd_toStartOf="@id/tv_info_reserved"/>
+
+    <TextView
+        android:id="@+id/tv_info_reserved"
+        android:text="Reserved"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:fontFamily="@font/poppins_regular"
+        android:layout_marginStart="14dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/iv_info_reserved"
+        app:layout_constraintTop_toTopOf="@id/iv_info_reserved"
+        app:layout_constraintBottom_toBottomOf="@id/iv_info_reserved"
+        app:layout_constraintEnd_toEndOf="@id/iv_layar_bioskop"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
