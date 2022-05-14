@@ -17,7 +17,7 @@ import com.rizqi.myapplication.model.GetAllMoviePopular
 import com.rizqi.myapplication.model.GetAllMovieUpcoming
 import com.rizqi.myapplication.model.ResultAdapter
 import com.rizqi.myapplication.model.ResultUpcoming
-import com.rizqi.myapplication.network.ApiClient
+import com.rizqi.myapplication.service.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

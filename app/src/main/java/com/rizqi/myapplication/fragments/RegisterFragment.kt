@@ -1,5 +1,7 @@
 package com.rizqi.myapplication.fragments
 
+import android.content.ContentResolver
+import android.net.Uri
 import android.os.Bundle
 import android.service.autofill.UserData
 import androidx.fragment.app.Fragment
@@ -38,6 +40,14 @@ class RegisterFragment : Fragment() {
 
 
         binding.btnRegister.setOnClickListener{
+
+            val imageUri: Uri = Uri.parse(
+                ContentResolver.SCHEME_ANDROID_RESOURCE +
+                        "://" + resources.getResourcePackageName(R.drawable.profil)
+                        + '/' + resources.getResourceTypeName(R.drawable.profil) + '/'
+                        + resources.getResourceEntryName(R.drawable.profil)
+            )
+
             when {
                 binding.tiUserNameEditText.text.isNullOrEmpty() -> {
                     binding.tiUserNameLayout.error = "Username belum diisi"
@@ -64,7 +74,8 @@ class RegisterFragment : Fragment() {
                         null,
                         binding.tiUserNameEditText.text.toString(),
                         binding.tiUserEmailEditText.text.toString(),
-                        binding.tiUserPasswordEditText.text.toString()
+                        binding.tiUserPasswordEditText.text.toString(),
+                        imageUri.toString()
                     )
                     lifecycleScope.launch(Dispatchers.IO) {
                         val result = mDb?.userDao()?.insertUser(user)

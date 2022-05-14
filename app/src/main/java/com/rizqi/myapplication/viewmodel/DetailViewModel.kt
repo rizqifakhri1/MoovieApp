@@ -1,11 +1,9 @@
 package com.rizqi.myapplication.viewmodel
 
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.bumptech.glide.Glide
 import com.rizqi.myapplication.model.GetDetail
-import com.rizqi.myapplication.network.ApiClient
+import com.rizqi.myapplication.service.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

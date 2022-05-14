@@ -97,7 +97,7 @@
     </fragment>
     <fragment
         android:id="@+id/movieFragment"
-        android:name="com.rizqi.myapplication.MovieFragment"
+        android:name="com.rizqi.myapplication.fragments.MovieFragment"
         android:label="fragment_movie"
         tools:layout="@layout/fragment_movie" >
         <action
@@ -113,7 +113,7 @@
     </fragment>
     <fragment
         android:id="@+id/pesanFragment"
-        android:name="com.rizqi.myapplication.PesanFragment"
+        android:name="com.rizqi.myapplication.fragments.PesanFragment"
         android:label="fragment_pesan"
         tools:layout="@layout/fragment_pesan" >
         <action
@@ -126,7 +126,7 @@
     </fragment>
     <fragment
         android:id="@+id/showTiketFragment"
-        android:name="com.rizqi.myapplication.ShowTiketFragment"
+        android:name="com.rizqi.myapplication.fragments.ShowTiketFragment"
         android:label="fragment_show_tiket"
         tools:layout="@layout/fragment_show_tiket" >
         <action
@@ -140,7 +140,7 @@
     </fragment>
     <fragment
         android:id="@+id/qrcodeFragment"
-        android:name="com.rizqi.myapplication.QrcodeFragment"
+        android:name="com.rizqi.myapplication.fragments.QrcodeFragment"
         android:label="fragment_qrcode"
         tools:layout="@layout/fragment_qrcode" >
         <action
