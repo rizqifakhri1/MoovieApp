@@ -15,6 +15,7 @@ import android.widget.Toast
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.net.toUri
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -26,7 +27,9 @@ import com.rizqi.myapplication.fragments.LoginFragment.Companion.PASSWORD
 import com.rizqi.myapplication.fragments.LoginFragment.Companion.USERNAME
 import com.rizqi.myapplication.model.UserEntity
 import com.rizqi.myapplication.orm.UserDatabase
+import com.rizqi.myapplication.viewmodel.HomeViewModel
 import com.rizqi.myapplication.viewmodel.ProfileViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
@@ -34,14 +37,14 @@ import kotlinx.coroutines.runBlocking
 import okhttp3.Dispatcher
 import java.io.File
 
-
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
     private var _binding : FragmentProfileBinding? = null
     private val binding get() = _binding!!
     lateinit var sharedPreferences : SharedPreferences
-    private lateinit var profileViewModel : ProfileViewModel
     private var database : UserDatabase? = null
+    private val profileViewModel: ProfileViewModel by viewModels()
 
 
     override fun onCreateView(
@@ -95,7 +98,7 @@ class ProfileFragment : Fragment() {
 
         database = UserDatabase.getInstance(requireContext())
         sharedPreferences = requireContext().getSharedPreferences(LOGINUSER, Context.MODE_PRIVATE)
-        profileViewModel = ViewModelProvider(requireActivity()).get(ProfileViewModel::class.java)
+        /*profileViewModel = ViewModelProvider(requireActivity()).get(ProfileViewModel::class.java)*/
         val username = sharedPreferences.getString(USERNAME, "default_username")
         val password = sharedPreferences.getString(PASSWORD, "default_password")
         if (username != null && password != null) {
@@ -103,7 +106,7 @@ class ProfileFragment : Fragment() {
         }
         var id = 0
         profileViewModel.userData.observe(viewLifecycleOwner){
-            id = it.id!!
+            id = it.data?.id!!
             binding.tiUserNameEditText.setText(it.username)
             binding.tiUserEmailEditText.setText(it.email)
             binding.tiUserPasswordEditText.setText(it.password)
@@ -127,24 +130,23 @@ class ProfileFragment : Fragment() {
                     binding.tiUserPasswordEditText.text.toString(),
                     imageUri.toString()
                 )
-                lifecycleScope.launch(Dispatchers.IO){
-                    val result = database?.userDao()?.updateUser(data)
-                    runBlocking(Dispatchers.Main) {
-                        if (result != 0){
+                profileViewModel.updateUser(data)
+                profileViewModel.update.observe(viewLifecycleOwner) {
+                    if (it != null) {
+                        if (it != 0) {
                             val editor = sharedPreferences.edit()
                             editor.putString(USERNAME, data.username)
                             editor.apply()
-                            Toast.makeText(requireContext(), "Data Berhasil Disimpan ${id}", Toast.LENGTH_SHORT).show()
-                            findNavController().navigate(R.id.action_profileFragment_to_homeScreenFragment)
+                            Toast.makeText(
+                                requireContext(), "User berhasil diupdate",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         } else {
-                            Toast.makeText(requireContext(), """
-                                    ${id},
-                        ${binding.tiUserNameEditText.text},
-                        ${binding.tiUserEmailEditText.text},
-                        ${binding.tiUserPasswordEditText.text}
-                                """.trimIndent(), Toast.LENGTH_SHORT).show()
+                            Toast.makeText(requireContext(), "User gagal diupdate", Toast.LENGTH_SHORT)
+                                .show()
                         }
                     }
+                    findNavController().navigate(R.id.action_loginFragment_to_homeScreenFragment)
                 }
             }
             }
@@ -154,12 +156,14 @@ class ProfileFragment : Fragment() {
 
     }
 
+
+
     private fun getData(username: String, password: String) {
         lifecycleScope.launch(Dispatchers.IO) {
             val result = database?.userDao()?.getUser(username, password)
             runBlocking(Dispatchers.Main) {
                 if (result != null) {
-                    profileViewModel.dataUser(result)
+                    /*profileViewModel.dataUser(result)*/
                 }
             }
         }

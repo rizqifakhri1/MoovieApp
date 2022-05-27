@@ -9,21 +9,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.rizqi.myapplication.R
 import com.rizqi.myapplication.databinding.FragmentRegisterBinding
 import com.rizqi.myapplication.model.UserEntity
 import com.rizqi.myapplication.orm.UserDatabase
+import com.rizqi.myapplication.viewmodel.HomeViewModel
+import com.rizqi.myapplication.viewmodel.RegisterViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
+@AndroidEntryPoint
 class RegisterFragment : Fragment() {
 
     private var _binding : FragmentRegisterBinding? = null
     private val binding get() = _binding!!
     private var mDb : UserDatabase? = null
+    private val registerViewModel: RegisterViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -77,17 +84,19 @@ class RegisterFragment : Fragment() {
                         binding.tiUserPasswordEditText.text.toString(),
                         imageUri.toString()
                     )
-                    lifecycleScope.launch(Dispatchers.IO) {
-                        val result = mDb?.userDao()?.insertUser(user)
-                        runBlocking(Dispatchers.Main){
-                            if (result != 0.toLong()){
-                                Toast.makeText(activity, "Registrasi Berhasil", Toast.LENGTH_SHORT).show()
-                            } else {
-                                Toast.makeText(activity, "Registrasi Gagal", Toast.LENGTH_SHORT).show()
+                    registerViewModel.addUser(user)
+                    registerViewModel.register.observe(viewLifecycleOwner) {
+                        if (it != 0.toLong()) {
+                            Toast.makeText(context, "Registrasi berhasil", Toast.LENGTH_SHORT).show()
+                            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+                        } else {
+                            val snackbar = Snackbar.make(binding.root,"Registrasi gagal, coba lagi nanti!", Snackbar.LENGTH_INDEFINITE)
+                            snackbar.setAction("Oke") {
+                                snackbar.dismiss()
                             }
+                            snackbar.show()
                         }
                     }
-                    findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
                 }
 
             }

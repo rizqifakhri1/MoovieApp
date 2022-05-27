@@ -5,21 +5,20 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rizqi.myapplication.di.Repository
-import com.rizqi.myapplication.model.GetDetail
 import com.rizqi.myapplication.model.UserEntity
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class ProfileViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
+class LoginViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
 
-    private val _update : MutableLiveData<Int> = MutableLiveData()
-    val update : LiveData<Int> get() = _update
+    private val  _login : MutableLiveData<UserEntity> = MutableLiveData()
+    val login : LiveData<UserEntity> get() = _login
 
-    fun updateUser(user: UserEntity){
+    fun getUser(username: String, password: String) {
         viewModelScope.launch {
-            _update.value = repository.updateUser(user)
+            _login.value = repository.getUser(username, password)
         }
     }
 }

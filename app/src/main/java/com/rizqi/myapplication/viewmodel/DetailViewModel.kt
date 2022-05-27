@@ -1,35 +1,30 @@
 package com.rizqi.myapplication.viewmodel
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.rizqi.myapplication.di.Repository
 import com.rizqi.myapplication.model.GetDetail
-import com.rizqi.myapplication.service.ApiClient
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class DetailViewModel: ViewModel() {
-    val dataDetail : MutableLiveData<GetDetail> = MutableLiveData()
-    fun getDetail(id : Int){
-        ApiClient.instance.getDetail(id)
-            .enqueue(object : Callback<GetDetail> {
+@HiltViewModel
+class DetailViewModel @Inject constructor(private val repository: Repository) : ViewModel() {
+//    val detailMovie: MutableLiveData<DetailMovieResponse> = MutableLiveData()
 
-                override fun onResponse(
-                    call: Call<GetDetail>,
-                    response: Response<GetDetail>
-                ) {
-                    val body = response.body()
-                    val code = response.code()
-                    if (code == 200){
-                        dataDetail.postValue(body)
-                    }
+    private val _detailMovie: MutableLiveData<Resource<GetDetail>> = MutableLiveData()
+    val detailMovie: LiveData<Resource<GetDetail>> get() = _detailMovie
 
-
-
-                }
-                override fun onFailure(call: Call<GetDetail>, t: Throwable) {
-
-                }
-            })
+    fun getMovieById(id: Int) {
+        viewModelScope.launch {
+            _detailMovie.postValue(Resource.loading())
+            try {
+                _detailMovie.postValue(Resource.success(repository.getMovieById(id)))
+            }catch (exception:Exception){
+                _detailMovie.postValue(Resource.error(exception.localizedMessage?:"Error occured"))
+            }
+        }
     }
 }

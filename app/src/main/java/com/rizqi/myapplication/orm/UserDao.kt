@@ -7,14 +7,14 @@ import retrofit2.http.GET
 @Dao
 interface UserDao {
     @Query("SELECT EXISTS(SELECT * FROM UserEntity WHERE username = :username and password = :password)")
-    fun checkUser(username: String, password: String): Boolean
+    suspend fun checkUser(username: String, password: String): Boolean
 
     @Query("SELECT * FROM UserEntity WHERE username = :username and password = :password")
-    fun getUser(username: String, password: String): UserEntity
+    suspend fun getUser(username: String, password: String): UserEntity
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertUser (userEntity: UserEntity):Long
+    suspend fun addUser (userEntity: UserEntity):Long
 
     @Update
-    fun updateUser (userEntity: UserEntity):Int
+    suspend fun updateUser (userEntity: UserEntity):Int
 }

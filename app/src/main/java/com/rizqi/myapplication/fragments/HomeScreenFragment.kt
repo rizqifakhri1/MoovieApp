@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.rizqi.myapplication.R
 import com.rizqi.myapplication.adapter.PopularAdapter
@@ -18,15 +19,20 @@ import com.rizqi.myapplication.model.GetAllMovieUpcoming
 import com.rizqi.myapplication.model.ResultAdapter
 import com.rizqi.myapplication.model.ResultUpcoming
 import com.rizqi.myapplication.service.ApiClient
+import com.rizqi.myapplication.viewmodel.HomeViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+@AndroidEntryPoint
 class HomeScreenFragment : Fragment() {
+
 
     private var _binding : FragmentHomeScreenBinding? = null
     private val binding get() = _binding!!
     private lateinit var preferences: SharedPreferences
+    private val homeViewModel: HomeViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,7 +66,7 @@ class HomeScreenFragment : Fragment() {
         fetchAllMovieUpcoming()
     }
 
-    private fun fetchAllMoviePopular(){
+  /*  private fun fetchAllMoviePopular(){
         ApiClient.instance.getAllMoviePopuler()
             .enqueue(object : Callback<GetAllMoviePopular> {
 
@@ -82,8 +88,17 @@ class HomeScreenFragment : Fragment() {
                 }
             })
     }
+*/
 
-    private fun showListMoviePopular(data: List<ResultAdapter>) {
+    private fun fetchAllMoviePopular() {
+        homeViewModel.getPopularMovie()
+        homeViewModel.popularMovie.observe(viewLifecycleOwner) {
+            showListPopularMovie(it.data?.results)
+
+        }
+    }
+
+    private fun showListPopularMovie(data: List<ResultAdapter>?) {
         val adapter = PopularAdapter(object : PopularAdapter.OnClickListener{
             override fun onClickItem(data: ResultAdapter) {
                 val id = data.id
@@ -96,7 +111,29 @@ class HomeScreenFragment : Fragment() {
     }
 
 
-    private fun fetchAllMovieUpcoming(){
+/*
+    private fun showListMoviePopular(data: List<ResultAdapter>) {
+        val adapter = PopularAdapter(object : PopularAdapter.OnClickListener{
+            override fun onClickItem(data: ResultAdapter) {
+                val id = data.id
+                val toDetail = HomeScreenFragmentDirections.actionHomeScreenFragmentToDetailFragment(id)
+                findNavController().navigate(toDetail)
+            }
+        })
+        adapter.submitData(data)
+        binding.rvHighlight.adapter = adapter
+    }
+*/
+
+
+    /*private fun fetchAllMovieUpcoming(){
+        homeViewModel.getUpcomingMovie()
+        homeViewModel.upcomingMovie.observe(viewLifecycleOwner) {
+            it.data?.results?.let { it1 -> showListMovieUpcoming(it1) }
+            binding!!.pbLoading.visibility = View.GONE
+
+        }
+    *//*
         ApiClient.instance.getAllMovieUpcoming()
             .enqueue(object : Callback<GetAllMovieUpcoming> {
 
@@ -117,7 +154,7 @@ class HomeScreenFragment : Fragment() {
                 override fun onFailure(call: Call<GetAllMovieUpcoming>, t: Throwable) {
                     Toast.makeText(requireContext(), "${t.message}", Toast.LENGTH_SHORT).show()
                 }
-            })
+            })*//*
     }
 
     private fun showListMovieUpcoming(data: List<ResultUpcoming>) {
@@ -127,6 +164,25 @@ class HomeScreenFragment : Fragment() {
                 val toDetail = HomeScreenFragmentDirections.actionHomeScreenFragmentToDetailFragment(id)
                 findNavController().navigate(toDetail)
 
+            }
+        })
+        adapter.submitData(data)
+        binding.rvPopuler.adapter = adapter
+    }*/
+
+    private fun fetchAllMovieUpcoming() {
+        homeViewModel.getUpcomingMovie()
+        homeViewModel.upcomingMovie.observe(viewLifecycleOwner) {
+            showListUpcomingMovie(it.data?.results)
+        }
+    }
+
+    private fun showListUpcomingMovie(data: List<ResultUpcoming>?) {
+        val adapter = UpcomingAdapter(object : UpcomingAdapter.OnClickListener{
+            override fun onClickItem(data: ResultUpcoming) {
+                val id = data.id
+                val toDetail = HomeScreenFragmentDirections.actionHomeScreenFragmentToDetailFragment(id)
+                findNavController().navigate(toDetail)
             }
         })
         adapter.submitData(data)
