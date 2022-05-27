@@ -105,13 +105,13 @@ class ProfileFragment : Fragment() {
                 getData(username, password)
         }
         var id = 0
-        profileViewModel.userData.observe(viewLifecycleOwner){
+/*        profileViewModel.userData.observe(viewLifecycleOwner){
             id = it.data?.id!!
             binding.tiUserNameEditText.setText(it.username)
             binding.tiUserEmailEditText.setText(it.email)
             binding.tiUserPasswordEditText.setText(it.password)
             binding.ivIcon.setImageURI( it.uri.toString().toUri())
-        }
+        }*/
         binding.btnUpdate.setOnClickListener {
             when {
                 binding.tiUserNameEditText.text.isNullOrEmpty() -> {
